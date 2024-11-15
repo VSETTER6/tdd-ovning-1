@@ -40,7 +40,21 @@ namespace LeapYearCalculator
             }
         }
 
-
+        public bool IsChoosenYearLeapYearIfDivideBy4(int choosenYear)
+        {
+            if (choosenYear % 4 == 0)
+            {
+                return true;
+            }
+            if (choosenYear % 4 != 0)
+            {
+                return false;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
 

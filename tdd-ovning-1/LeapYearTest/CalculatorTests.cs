@@ -56,7 +56,24 @@ namespace LeapYearTest
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        // Steg/Krav 3
+        // Steg/Krav 3/4
         // Alla år delbara med 4 men inte med 100 ÄR skottår(t.ex. 2008, 2012, 2016)
+        // Alla år som inte är delbara med 4 är INTE skottår (t.ex. 2017, 2018, 2019)
+        [Test]
+        [TestCase(2020, true)]
+        [TestCase(2016, true)]
+        [TestCase(2001, false)]
+        [TestCase(1601, false)]
+        public void IsChoosenYearLeapYearIfDividedBy4 (int choosenYear, bool expectedResult)
+        {
+            // Arrange
+            Year year = new Year();
+
+            // Act
+            bool actualResult = year.IsChoosenYearLeapYearIfDivideBy4(choosenYear);
+
+            // Assert
+            Assert.AreEqual (expectedResult, actualResult);
+        }
     }
 }
